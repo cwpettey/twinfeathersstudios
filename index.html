@@ -15,7 +15,7 @@
 
         header {
             text-align: center;
-            padding: 3.5rem 1rem 3rem;
+            padding: 2.25rem 1rem 2.75rem;
             background: linear-gradient(135deg, #111827, #1f2937);
         }
 
@@ -30,14 +30,43 @@
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            margin: 0 0 0.5rem;
             letter-spacing: 2px;
         }
 
         h2 {
             font-weight: normal;
             color: #9ca3af;
-            margin-top: 0;
+            margin: 0;
+        }
+
+        .meta {
+            margin-top: 0.75rem;
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* Top nav */
+        nav {
+            margin-top: 1.25rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #eaeaea;
+            text-decoration: none;
+            padding: 0.55rem 0.9rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 999px;
+            background: rgba(0,0,0,0.15);
+        }
+
+        .nav-link:hover {
+            border-color: rgba(56,189,248,0.75);
+            text-decoration: none;
         }
 
         section {
@@ -49,22 +78,41 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+        }
+
+        /* Make whole card clickable */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .card {
             background: #1f2937;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+        }
+
+        .card-media {
+            background: #0b0f16;
+            padding: 14px;
         }
 
         .card img {
             width: 100%;
-            height: 190px;
-            object-fit: cover;
+            height: 260px;
+            object-fit: contain; /* show full image */
             display: block;
+            border-radius: 10px;
         }
 
         .card-body {
@@ -77,8 +125,18 @@
         }
 
         .card p {
-            margin: 0;
+            margin: 0.25rem 0 1rem;
             color: #d1d5db;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.55rem 0.9rem;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #eaeaea;
+            text-decoration: none;
         }
 
         footer {
@@ -91,11 +149,6 @@
 
         a {
             color: #38bdf8;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -103,11 +156,18 @@
 <body>
 
 <header>
-    <!-- Studio logo (path matches your assets folder) -->
     <img class="studio-logo" src="assets/twin_feathers_logo.png" alt="Twin Feathers Studios logo" />
 
     <h1>Twin Feathers Studios</h1>
     <h2>Independent Game & Interactive Media Studio</h2>
+    <div class="meta">Founded 2024 • Veteran Owned & Operated • Texas</div>
+
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/about/">About</a>
+        <a class="nav-link" href="/media/">Media</a>
+        <a class="nav-link" href="https://www.instagram.com/twin_feathers_studios?igsh=OXd4NmV2d3hrbnZ1" target="_blank" rel="noopener">Instagram</a>
+    </nav>
 </header>
 
 <section>
@@ -124,26 +184,37 @@
     <h3>Projects</h3>
 
     <div class="projects">
-        <div class="card">
-            <img src="assets/skagamor.png" alt="Skágamór logo" />
-            <div class="card-body">
-                <h4>Skágamór</h4>
-                <p>
-                    A Viking-inspired survival and settlement game focused on harsh environments,
-                    meaningful NPC systems, and player-driven leadership.
-                </p>
+        <a class="card-link" href="/skagamor/">
+            <div class="card">
+                <div class="card-media">
+                    <img src="assets/skagamor.png" alt="Skágamór logo" />
+                </div>
+                <div class="card-body">
+                    <h4>Skágamór</h4>
+                    <p>
+                        A Viking-inspired survival and settlement game focused on harsh environments,
+                        meaningful NPC systems, and player-driven leadership.
+                    </p>
+                    <span class="btn">Learn more →</span>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <div class="card">
-            <img src="assets/under_the_mountain.jpeg" alt="Under the Mountain logo" />
-            <div class="card-body">
-                <h4>Under the Mountain</h4>
-                <p>
-                    A fantasy project built around craftsmanship, progression, and mountain-deep atmosphere.
-                </p>
+        <a class="card-link" href="/under-the-mountain/">
+            <div class="card">
+                <div class="card-media">
+                    <img src="assets/under_the_mountain.jpeg" alt="Under the Mountain logo" />
+                </div>
+                <div class="card-body">
+                    <h4>Under the Mountain</h4>
+                    <p>
+                        A dwarf survival mining game centered on exploration, resource management,
+                        crafting, and pushing deeper into dangerous stone.
+                    </p>
+                    <span class="btn">Learn more →</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </section>
 
@@ -157,7 +228,7 @@
 </section>
 
 <footer>
-    © 2026 Twin Feathers Studios LLC. All rights reserved.
+    © 2024–2026 Twin Feathers Studios LLC. All rights reserved.
 </footer>
 
 </body>
