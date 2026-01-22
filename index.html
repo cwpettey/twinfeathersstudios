@@ -15,8 +15,17 @@
 
         header {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 3.5rem 1rem 3rem;
             background: linear-gradient(135deg, #111827, #1f2937);
+        }
+
+        .studio-logo {
+            width: 140px;
+            height: auto;
+            margin: 0 auto 1rem;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
         }
 
         h1 {
@@ -28,6 +37,7 @@
         h2 {
             font-weight: normal;
             color: #9ca3af;
+            margin-top: 0;
         }
 
         section {
@@ -45,9 +55,30 @@
 
         .card {
             background: #1f2937;
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        .card h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: #d1d5db;
         }
 
         footer {
@@ -72,6 +103,9 @@
 <body>
 
 <header>
+    <!-- Studio logo (path matches your assets folder) -->
+    <img class="studio-logo" src="assets/twin_feathers_logo.png" alt="Twin Feathers Studios logo" />
+
     <h1>Twin Feathers Studios</h1>
     <h2>Independent Game & Interactive Media Studio</h2>
 </header>
@@ -80,29 +114,35 @@
     <h3>About Us</h3>
     <p>
         Twin Feathers Studios is an independent creative studio focused on immersive
-        games, interactive storytelling, and system-driven worlds. We blend
-        gameplay depth with strong narrative identity, inspired by history,
-        mythology, and survival-driven design.
+        games, interactive storytelling, and system-driven worlds. We blend gameplay
+        depth with strong narrative identity, inspired by history, mythology, and
+        survival-driven design.
     </p>
 </section>
 
 <section>
     <h3>Projects</h3>
+
     <div class="projects">
         <div class="card">
-            <h4>Skágamór</h4>
-            <p>
-                A Viking-inspired survival and settlement game focused on harsh
-                environments, meaningful NPC systems, and player-driven leadership.
-            </p>
+            <img src="assets/skagamor.png" alt="Skágamór logo" />
+            <div class="card-body">
+                <h4>Skágamór</h4>
+                <p>
+                    A Viking-inspired survival and settlement game focused on harsh environments,
+                    meaningful NPC systems, and player-driven leadership.
+                </p>
+            </div>
         </div>
 
         <div class="card">
-            <h4>Future Titles</h4>
-            <p>
-                Additional projects are in early development and will be revealed
-                as they take form.
-            </p>
+            <img src="assets/under_the_mountain.jpeg" alt="Under the Mountain logo" />
+            <div class="card-body">
+                <h4>Under the Mountain</h4>
+                <p>
+                    A fantasy project built around craftsmanship, progression, and mountain-deep atmosphere.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -110,11 +150,9 @@
 <section>
     <h3>Contact</h3>
     <p>
-        Business inquiries:  
+        Business inquiries:
         <br />
-        <a href="mailto:info@twinfeathersstudios.com">
-            contact@twinfeathersstudios.com
-        </a>
+        <a href="mailto:info@twinfeathersstudios.com">info@twinfeathersstudios.com</a>
     </p>
 </section>
 
